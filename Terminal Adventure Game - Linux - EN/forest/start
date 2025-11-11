@@ -1,0 +1,40 @@
+#!/bin/bash
+
+for file in "forest.png" "front_door" "tower" "secret_door" "intro.txt" "note.txt"; do
+  if [ -e "$file" ]; then
+    mv -f "$file" ".$file"
+  fi
+done
+
+if [ -e "pokkie" ]; then
+  mkdir -p ".tower/living_room/.attic"
+  mv -f "pokkie" ".tower/living_room/.attic/"
+fi
+
+cd ".tower"
+
+if [ -e "kitchen/wizard" ]; then
+  mv -f "kitchen/wizard" "living_room/"
+fi
+
+if [ -e "living_room/.attic/wizard" ]; then
+  mv -f "living_room/.attic/wizard" "living_room/"
+fi
+
+if [ -e "living_room/.attic/large_pot" ]; then
+  mv -f "living_room/.attic/large_pot" "kitchen/"
+fi
+
+for file in "kitchen/rat" "crumbled_scroll.txt" \
+            "living_room/glasses_for_reading" "living_room/trap_door" \
+            "kitchen/fridge_post-it.txt"; do
+  if [ -e "$file" ]; then
+    mv -f "$file" "$(dirname "$file")/.$(basename "$file")"
+  fi
+done
+
+unset EC_WIZARD_ATTIC EC_WIZARD_KITCHEN EC_PARROT_FREED EC_PARROT_OUTSIDE EC_RAT_MET
+
+cd ..
+
+cat .intro.txt

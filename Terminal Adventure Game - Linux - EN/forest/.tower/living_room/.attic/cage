@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+pause() {
+  echo
+  read -n 1 -s -r -p "Press any key to continue..."
+  echo
+}
+
+if [[ -n "$EC_PARROT_FREED" ]]; then
+  section="freed"
+elif [[ "${1,,}" == "open" ]]; then
+  section="open"
+else
+  section="caged"
+fi
+
+case "$section" in
+
+  freed)
+    echo
+    echo "The cage is open and empty now."
+    echo
+    ;;
+
+  caged)
+    echo
+    echo "Pokkie sits trapped in the cage. How are you gonna open it!?"
+    echo
+    pause
+    echo
+    echo "Maybe you need to know the right command."
+    echo
+    ;;
+
+  open)
+    echo
+    echo "With a zap the cage door springs open and Pokkie immediately flies out of it."
+    echo
+    export EC_PARROT_FREED=true
+    pause
+    echo
+    echo "You did it! Now quickly get Pokkie and bring her outside."
+    echo
+    ;;
+esac
