@@ -1,0 +1,2 @@
+MAGIC SPELL TO FIND MY GLASSES ANYWHERE IN THE TOWER
+find . -name "*glasses*" 

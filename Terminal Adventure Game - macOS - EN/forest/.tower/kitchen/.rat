@@ -1,0 +1,36 @@
+#!/bin/bash
+
+pause() {
+  echo
+  read -n 1 -s -r -p "Press any key to continue..."
+  echo
+}
+
+if [ -n "$EC_WIZARD_ATTIC" ]; then
+  section="safe"
+else
+  section="scared"
+fi
+
+case "$section" in
+  scared)
+    echo
+    echo "The rat cowers under the stove, apparently afraid of something or someone."
+    echo
+    ;;
+
+  safe)
+    echo
+    echo "The rat cleans his whiskers and adjusts his glasses."
+    echo
+    echo "\"Ah, he's finally gone.\""
+    echo
+    pause
+    echo
+    echo "\"So, you've been poking around here."
+    echo "Well, let me tell you, sometimes you have to look a bit closer if you want to find hidden stuff."
+    echo "With \`ls -aF\` you can spot things that are hidden. You should give it a try!\""
+    echo
+    export EC_RAT_MET=true
+    ;;
+esac

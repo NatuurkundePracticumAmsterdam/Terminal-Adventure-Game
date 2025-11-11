@@ -1,0 +1,79 @@
+#!/bin/bash
+
+pause() {
+  echo
+  read -n 1 -s -r -p "Press any key to continue..."
+  echo
+}
+
+if [ -n "$EC_PARROT_OUTSIDE" ]; then
+  section="outside"
+elif [ -n "$EC_PARROT_FREED" ]; then
+  section="onlyfreed"
+else
+  section="kidnapped"
+fi
+
+case "$section" in
+  kidnapped)
+    echo
+    echo "You approach the girl and ask her what's wrong."
+    echo
+    pause
+    echo
+    echo "\"Help! He took my parrot Pokkie into his magical tower!\""
+    echo
+    pause
+    echo
+    echo "\"Years ago, when I was secretly picking flowers here, he put a spell on me."
+    echo "Now I can't leave the grounds, and if I step over the tower's threshold, I'll turn to stone.\""
+    echo
+    pause
+    echo
+    echo "\"I found Pokkie in the crown of the bubblegum tree. She had beautiful colored feathers and a tiny parrot beak."
+    echo "And now he's taken her inside."
+    echo "Quick, you must save Pokkie before he turns her into parrot soup!\""
+    echo
+    pause
+    echo
+    echo "She hands you a little note. \"Here, I wrote down some tips for you.\""
+    echo
+    pause
+
+    if command -v xdg-open >/dev/null 2>&1; then
+      xdg-open note.txt >/dev/null 2>&1 &
+    elif command -v open >/dev/null 2>&1; then
+      open note.txt >/dev/null 2>&1 &
+    else
+      cat note.txt
+    fi
+
+    echo
+    echo "I hope you can save Pokkie! Good luck!"
+    echo
+
+    for f in "forest.png" "girl" "front_door" "tower" "note.txt"; do
+      if [ -e ".$f" ]; then mv -f ".$f" "$f"; fi
+    done
+    ;;
+
+  onlyfreed)
+    echo
+    echo "\"Ah, you're back. Did it work? Where's Pokkie?\""
+    echo
+    pause
+    echo
+    echo "You realize that Pokkie is still inside. Maybe you should talk to Pokkie."
+    echo
+    ;;
+
+  outside)
+    echo
+    echo "The girl is dancing around happily."
+    echo
+    pause
+    echo
+    echo "\"You saved Pokkie! Thank you so much!\""
+    echo
+    ;;
+esac
