@@ -34,7 +34,7 @@ pause
 echo
 echo "\"Also, you should really read the house rules.\""
 echo "He points at a paper on the wall (rules.txt)."
-echo "\"Just type \`xdg-open rules.txt\` to read them, will you?\""
+echo "\"Just type \`open rules.txt\` to read them, will you?\""
 echo
 pause
 echo
