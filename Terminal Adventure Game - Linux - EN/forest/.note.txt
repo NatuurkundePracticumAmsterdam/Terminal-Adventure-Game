@@ -4,7 +4,7 @@ You can enter it by typing `cd tower`.
 
 To get back out of the tower, or a room, you can always type `cd ..`. Don't forget the dots, or it won't work.
 
-You can always see where you are: `Terminal Adventure Game\forest]` means that you are in the forest right now.
+You can always see where you are: `[user@device forest]$` means that you are in the forest right now.
 
 By typing `ls -F` you can see what's in a room. Only when it has `/` behind it can you enter it.
 
