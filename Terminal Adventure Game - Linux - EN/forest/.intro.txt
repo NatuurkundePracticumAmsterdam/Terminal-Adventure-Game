@@ -3,4 +3,4 @@ You're walking through the forest when you come across a tall tower. It feels a 
 
 Suddenly, you hear someone calling out, "Hey, can you help me!?"
 
-Type `. girl` and press enter to talk to her.
+Type `./girl` and press enter to talk to her.
