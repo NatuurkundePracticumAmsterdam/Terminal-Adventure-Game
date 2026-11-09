@@ -9,7 +9,7 @@ pause() {
 
 if [[ -n "$EC_PARROT_FREED" ]]; then
   section="freed"
-elif [[ "${1,,}" == "open" ]]; then
+elif [[ "$1" == "open" ]]; then
   section="open"
 else
   section="caged"
