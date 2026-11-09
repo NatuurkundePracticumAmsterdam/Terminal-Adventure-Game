@@ -31,14 +31,15 @@ echo.
 echo She hands you a little note. "Here, I wrote down some tips for you."
 echo.
 pause
-start notepad note.txt
-echo.
-echo I hope you can save Pokkie! Good luck!"
-echo.
 attrib -h forest.png
 attrib -h girl.bat
 attrib -h "front door"
 attrib -h tower
+attrib -h note.txt
+start notepad note.txt
+echo.
+echo I hope you can save Pokkie! Good luck!"
+echo.
 exit /b
 
 :onlyfreed

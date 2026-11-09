@@ -41,6 +41,10 @@ case "$section" in
     echo
     pause
 
+    for f in "forest.png" "girl" "front_door" "tower" "note.txt"; do
+      if [ -e ".$f" ]; then mv -f ".$f" "$f"; fi
+    done
+
     if command -v xdg-open >/dev/null 2>&1; then
       xdg-open note.txt >/dev/null 2>&1 &
     elif command -v open >/dev/null 2>&1; then
@@ -52,10 +56,6 @@ case "$section" in
     echo
     echo "I hope you can save Pokkie! Good luck!"
     echo
-
-    for f in "forest.png" "girl" "front_door" "tower" "note.txt"; do
-      if [ -e ".$f" ]; then mv -f ".$f" "$f"; fi
-    done
     ;;
 
   onlyfreed)
