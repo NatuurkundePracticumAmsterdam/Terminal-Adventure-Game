@@ -14,4 +14,6 @@ You can look at notes like this one with: `xdg-open note.txt`. So to read this n
 
 I've only been able to peek around the corner, but saw a gnome in the tower. Maybe you can talk with him by typing `. gnome` when you're inside.
 
+You can inspect objects, like a table or a fridge, by typing `cat` followed by the name, for example `cat table`.
+
 If you see anyone with a `*` behind their name when typing `ls -F`, you can talk with them by typing `. name`.

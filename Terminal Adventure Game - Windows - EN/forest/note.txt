@@ -14,4 +14,6 @@ You can look at notes like this one with: `notepad note.txt`. So to read this no
 
 I've only been able to peek around the corner, but saw a gnome in the tower. Maybe you can talk with him by typing `gnome` when you're inside.
 
+You can inspect objects, like a table or a fridge, by typing `type` followed by the name, for example `type table`.
+
 If you see anyone else in there, you can talk with them by typing their name.
