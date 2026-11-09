@@ -58,15 +58,15 @@ case "$section" in
     echo
     echo "As you come closer, she looks at you."
     echo
-    echo '"CWAAAK! `cage open`!"'
+    echo '"CWAAAK! `./cage open`!"'
     echo
     pause
     echo
-    echo '"CWAAAK! `cage open`!"'
+    echo '"CWAAAK! `./cage open`!"'
     echo
 
     if [[ "$EC_WIZARD_ATTIC" == "true" ]]; then
-      echo "The wizard looks at you with a red face. \"Don't you dare type \`. cage open\`!\""
+      echo "The wizard looks at you with a red face. \"Don't you dare type \`./cage open\`!\""
       echo 
     fi
     ;;
