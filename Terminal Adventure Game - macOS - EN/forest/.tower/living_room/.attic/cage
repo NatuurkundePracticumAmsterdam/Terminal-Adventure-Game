@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+S=.; until [ -e "$S/.state" ]; do S="$S/.."; done; S="$S/.state"; . "$S"
 
 pause() {
   echo
@@ -36,7 +37,7 @@ case "$section" in
     echo
     echo "With a zap the cage door springs open and Pokkie immediately flies out of it."
     echo
-    export EC_PARROT_FREED=true
+    echo EC_PARROT_FREED=true >> "$S"
     pause
     echo
     echo "You did it! Now quickly get Pokkie and bring her outside."

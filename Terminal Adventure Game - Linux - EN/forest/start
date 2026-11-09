@@ -33,7 +33,7 @@ for file in "kitchen/rat" "crumbled_scroll.txt" \
   fi
 done
 
-unset EC_WIZARD_ATTIC EC_WIZARD_KITCHEN EC_PARROT_FREED EC_PARROT_OUTSIDE EC_RAT_MET
+: > ../.state
 
 cd ..
 

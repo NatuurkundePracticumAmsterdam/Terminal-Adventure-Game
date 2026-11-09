@@ -1,4 +1,5 @@
 #!/bin/bash
+S=.; until [ -e "$S/.state" ]; do S="$S/.."; done; S="$S/.state"; . "$S"
 
 pause() {
   echo

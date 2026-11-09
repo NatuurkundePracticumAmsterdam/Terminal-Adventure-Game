@@ -1,4 +1,5 @@
 #!/bin/bash
+S=.; until [ -e "$S/.state" ]; do S="$S/.."; done; S="$S/.state"; . "$S"
 
 pause() {
   echo
@@ -45,7 +46,7 @@ case "$section" in
     echo
     echo "And with this, the wizard disappears in a puff of smoke that smells faintly of burnt iron and sulfur."
     echo
-    export EC_WIZARD_KITCHEN=true
+    echo EC_WIZARD_KITCHEN=true >> "$S"
 
     mv -f "wizard" "../kitchen/" 2>/dev/null || true
     ;;
@@ -75,8 +76,8 @@ case "$section" in
 
     mv -f .rat rat
 
-    unset EC_WIZARD_KITCHEN
-    export EC_WIZARD_ATTIC=true
+    grep -v EC_WIZARD_KITCHEN "$S" > "$S.tmp"; mv "$S.tmp" "$S"
+    echo EC_WIZARD_ATTIC=true >> "$S"
 
     mkdir -p "../living_room/.attic"
     [ -e "large_pot" ] && mv -f "large_pot" "../living_room/.attic/" 2>/dev/null || true

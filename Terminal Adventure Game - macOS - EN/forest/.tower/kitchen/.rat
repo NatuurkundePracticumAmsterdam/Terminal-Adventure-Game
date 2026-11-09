@@ -1,4 +1,5 @@
 #!/bin/bash
+S=.; until [ -e "$S/.state" ]; do S="$S/.."; done; S="$S/.state"; . "$S"
 
 pause() {
   echo
@@ -31,6 +32,6 @@ case "$section" in
     echo "Well, let me tell you, sometimes you have to look a bit closer if you want to find hidden stuff."
     echo "With \`ls -aF\` you can spot things that are hidden. You should give it a try!\""
     echo
-    export EC_RAT_MET=true
+    echo EC_RAT_MET=true >> "$S"
     ;;
 esac
